@@ -1,13 +1,15 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { startClock, addCount, serverRenderClock } from '../store'
+import { startClock, addCount, serverRenderClock } from '../store/actions'
 import { connect } from 'react-redux'
 import Page from '../components/Page'
 
 class Counter extends React.Component {
-  static getInitialProps ({ store, isServer }) {
+  static getInitialProps ({ 
+    store, 
+    isServer }) {
     store.dispatch(serverRenderClock(isServer))
-    store.dispatch(addCount())
+    // store.dispatch(addCount())
     return { isServer }
   }
 
@@ -28,7 +30,7 @@ class Counter extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addCount: bindActionCreators(addCount, dispatch),
+    // addCount: bindActionCreators(addCount, dispatch),
     startClock: bindActionCreators(startClock, dispatch)
   }
 }

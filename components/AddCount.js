@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { addCount } from '../store'
+import { addCount } from '../store/actions'
 import common from '../styles/common.less'
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -54,4 +54,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+//直接在该组件上封装成为容器组件
 export default connect(mapStateToProps, mapDispatchToProps)(AddCount)
