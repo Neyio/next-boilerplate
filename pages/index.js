@@ -21,6 +21,7 @@ class Counter extends React.Component {
   }
 
   render () {
+    
     return (
       <Page title='Index Page' linkTo='/other' />
     )
