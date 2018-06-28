@@ -9,7 +9,6 @@ class Counter extends React.Component {
     store, 
     isServer }) {
     store.dispatch(serverRenderClock(isServer))
-    // store.dispatch(addCount())
     return { isServer }
   }
 
