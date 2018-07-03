@@ -21,6 +21,8 @@ cscope.*
 # build output
 dist
 .next
+build/
+
 
 # dependencies
 node_modules

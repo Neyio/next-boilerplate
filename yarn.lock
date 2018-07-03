@@ -2216,7 +2216,7 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-express@^4.16.2:
+express@4.16.3, express@^4.16.2:
   version "4.16.3"
   resolved "http://registry.npm.release.ctripcorp.com/express/download/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
   dependencies:
@@ -3982,9 +3982,9 @@ next-tick@1:
   version "1.0.0"
   resolved "http://registry.npm.release.ctripcorp.com/next-tick/download/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-next@6.1.0:
-  version "6.1.0"
-  resolved "http://registry.npm.release.ctripcorp.com/next/download/next-6.1.0.tgz#89d9c267f693b2b99d1cdbc52f7eb219b66c3e16"
+next@^6.0.3:
+  version "6.1.1"
+  resolved "http://registry.npm.release.ctripcorp.com/next/download/next-6.1.1.tgz#b86d6b773871cfeb189b926eb7089d12f291668e"
   dependencies:
     "@babel/core" "7.0.0-beta.42"
     "@babel/plugin-proposal-class-properties" "7.0.0-beta.42"

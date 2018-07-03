@@ -32,9 +32,11 @@ module.exports = withPlugins(
 		]
 	],
 	{
-		assetPrefix: '',
+		distDir: 'build',
+		useFileSystemPublicRoutes: true,
+		// assetPrefix: '/you/dist',
 		webpack: (config, { isServer }) => {
-			console.log(config)
+			// console.log(config)
 			// config.output.path = __dirname + '/dist'
 			if (ANALYZE) {
 				config.plugins.push(
