@@ -1,8 +1,8 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { startClock, addCount, serverRenderClock } from '../store/actions'
+import {  addCount  } from '../src/actions/counter'
 import { connect } from 'react-redux'
-import Page from '../components/Page'
+import Page from '../src/containers/Page'
 
 class Counter extends React.Component {
   static getInitialProps ({ store, isServer }) {
@@ -12,11 +12,10 @@ class Counter extends React.Component {
   }
 
   componentDidMount () {
-    this.timer = this.props.startClock()
   }
 
   componentWillUnmount () {
-    clearInterval(this.timer)
+
   }
 
   render () {
@@ -29,8 +28,7 @@ class Counter extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // addCount: bindActionCreators(addCount, dispatch),
-    startClock: bindActionCreators(startClock, dispatch)
+    addCount: bindActionCreators(addCount, dispatch),
   }
 }
 
