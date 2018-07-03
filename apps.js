@@ -26,14 +26,32 @@ app.prepare()
   .then(() => {
     const server = express()
     // server.use(`${baseUrl}/dist`, serve("./build"))
-    server.use(`/you/dist/`, express.static('build'));
-    server.get(`${baseUrl}`, (req, res) => {
-      return app.render(req, res, '/index', req.query)
-    })
+    const router = express.Router()
 
-    server.get(`${baseUrl}/other`, (req, res) => {
-        return app.render(req, res, '/other', req.query)
-      })
+  router.get(`${baseUrl}`, (req, res) => {
+    return app.render(req, res, '/index', req.query)
+  })
+
+  router.get('*', (req, res) => {
+    return handle(req, res)
+  })
+
+  // use next routes
+  server.use(`${baseUrl}`, router)
+  server.use(`${baseUrl}/static`, express.static('dist'))
+  server.use(handle)
+
+    // server.use(`/_next/*`, (req, res) => {
+    //   const neURL = req.originalUrl.replace('_next', 'you/next')
+    //   res.redirect(newURL);
+    // });
+    // server.get(`${baseUrl}`, (req, res) => {
+    //   return app.render(req, res, '/index', req.query)
+    // })
+
+    // server.get(`${baseUrl}/other`, (req, res) => {
+    //     return app.render(req, res, '/other', req.query)
+    //   })
 
     // server.get('/posts/:id', (req, res) => {
     //   return app.render(req, res, '/posts', { id: req.params.id })

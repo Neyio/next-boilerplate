@@ -32,13 +32,17 @@ module.exports = withPlugins(
 		]
 	],
 	{
-		distDir: 'build',
+		distDir: 'dist',
 		// publicRuntimeConfig: { // Will be available on both server and client
 		// staticFolder: '/static'
 		// },
 		// useFileSystemPublicRoutes: true,
-		assetPrefix: '/you/dist',
+		// assetPrefix: '/you/dist',
+		generateBuildId: async () =>{
+			return 'v1'
+		},
 		webpack: (config, { isServer }) => {
+			config.devtool = 'source-map'
 			// console.log(config)
 			// config.output.path = __dirname + '/dist'
 			if (ANALYZE) {
