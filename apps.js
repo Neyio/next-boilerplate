@@ -38,7 +38,7 @@ app.prepare()
 
   // use next routes
   server.use(`${baseUrl}`, router)
-  server.use(`${baseUrl}/static`, express.static('dist'))
+  server.use(`${baseUrl}/dist`, express.static('dist'))
   server.use(handle)
 
     // server.use(`/_next/*`, (req, res) => {
