@@ -26,8 +26,8 @@ app.prepare()
   .then(() => {
     const server = express()
     // server.use(`${baseUrl}/dist`, serve("./build"))
-    server.use(`${baseUrl}/dist`, express.static(__dirname + '/build'));
-    server.get(`${baseUrl}/`, (req, res) => {
+    server.use(`/you/dist/`, express.static('build'));
+    server.get(`${baseUrl}`, (req, res) => {
       return app.render(req, res, '/index', req.query)
     })
 
@@ -39,7 +39,7 @@ app.prepare()
     //   return app.render(req, res, '/posts', { id: req.params.id })
     // })
 
-    server.get('${baseUrl}*', (req, res) => {
+    server.get(`${baseUrl}*`, (req, res) => {
       return handle(req, res)
     })
 

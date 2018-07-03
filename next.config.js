@@ -33,8 +33,11 @@ module.exports = withPlugins(
 	],
 	{
 		distDir: 'build',
-		useFileSystemPublicRoutes: true,
-		// assetPrefix: '/you/dist',
+		// publicRuntimeConfig: { // Will be available on both server and client
+		// staticFolder: '/static'
+		// },
+		// useFileSystemPublicRoutes: true,
+		assetPrefix: '/you/dist',
 		webpack: (config, { isServer }) => {
 			// console.log(config)
 			// config.output.path = __dirname + '/dist'
