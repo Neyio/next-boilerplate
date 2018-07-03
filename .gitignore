@@ -1,3 +1,23 @@
+# Logs
+logs
+*.log
+*.log.*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# IDE/Editor data
+.idea
+.vscode
+
+# Mac System File
+*/.DS_Store
+*.swp
+.tern-project
+cscope.*
+
 # build output
 dist
 .next
