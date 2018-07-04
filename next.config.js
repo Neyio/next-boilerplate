@@ -7,7 +7,7 @@ const { ANALYZE } = process.env
 const rpconfig = require('config-lite')({
 	// filename: `config.${process.env.NODE_ENV}`,
 	config_basedir: __dirname,
-  	config_dir: 'config'
+	config_dir: 'config'
 })
 // /* Without CSS Modules, with PostCSS */
 module.exports = withPlugins(
@@ -38,7 +38,7 @@ module.exports = withPlugins(
 		// },
 		// useFileSystemPublicRoutes: true,
 		// assetPrefix: '/you/dist',
-		generateBuildId: async () =>{
+		generateBuildId: async () => {
 			return 'v1'
 		},
 		webpack: (config, { isServer }) => {

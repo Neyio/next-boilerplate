@@ -6,7 +6,7 @@
         "publish": "npm run build && cross-env NODE_ENV=production ndoe server.js",
         "dev": "cross-env NODE_ENV=uat node server.js",
         "dev-express": "cross-env NODE_ENV=uat node apps.js",
-        "build": "next build",
+        "build": "next build ",
         "start": "cross-env NODE_ENV=production node server.js",
         "start-express": "cross-env NODE_ENV=production node apps.js",
         "analyze": "cross-env ANALYZE=1 next build"
