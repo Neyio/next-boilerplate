@@ -11,10 +11,6 @@
         "start-express": "cross-env NODE_ENV=production node apps.js",
         "analyze": "cross-env ANALYZE=1 next build"
     },
-    "config": {
-        "port": 8080,
-        "env": "FAT"
-    },
     "dependencies": {
         "@zeit/next-css": "0.2.0",
         "@zeit/next-less": "0.3.0",
