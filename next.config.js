@@ -1,4 +1,6 @@
+const webpack = require('webpack')
 const withPlugins = require('next-compose-plugins')
+
 const withLess = require('@zeit/next-less')
 const withCss = require('@zeit/next-css')
 const withSass = require('@zeit/next-sass')
@@ -29,7 +31,8 @@ module.exports = withPlugins(
 			{
 				cssModules: false
 			}
-		]
+		],
+		[withImages]
 	],
 	{
 		distDir: 'dist',
@@ -54,7 +57,15 @@ module.exports = withPlugins(
 					})
 				)
 			}
-
+			config.plugins.push(
+				new webpack.optimize.UglifyJsPlugin({
+					compress: {
+						warnings: false,
+						drop_debugger: dev ? false : true,
+						drop_console: dev ? false : true
+					}
+				})
+			)
 			return config
 		}
 	}
