@@ -3,8 +3,8 @@
     "version": "0.0.2",
     "main": "server.js",
     "scripts": {
-        "publish": "npm run build && cross-env NODE_ENV=production ndoe server.js",
-        "dev": "cross-env NODE_ENV=dev node server.js",
+        "publish": "npm run build && cross-env NODE_ENV=production node server.js",
+        "dev": "cross-env NODE_ENV=dev node apps.js",
         "dev-express": "cross-env NODE_ENV=dev node apps.js",
         "build": "next build ",
         "start": "cross-env NODE_ENV=production node server.js",

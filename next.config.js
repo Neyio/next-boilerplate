@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const withPlugins = require('next-compose-plugins')
-
+const withImages = require('next-images')
 const withLess = require('@zeit/next-less')
 const withCss = require('@zeit/next-css')
 const withSass = require('@zeit/next-sass')
@@ -11,6 +11,7 @@ const rpconfig = require('config-lite')({
 	config_basedir: __dirname,
 	config_dir: 'config'
 })
+const dev = process.env.NODE_ENV !== 'production'
 // /* Without CSS Modules, with PostCSS */
 module.exports = withPlugins(
 	[
@@ -36,18 +37,11 @@ module.exports = withPlugins(
 	],
 	{
 		distDir: 'dist',
-		// publicRuntimeConfig: { // Will be available on both server and client
-		// staticFolder: '/static'
-		// },
-		// useFileSystemPublicRoutes: true,
-		// assetPrefix: '/you/dist',
 		generateBuildId: async () => {
 			return 'v1'
 		},
 		webpack: (config, { isServer }) => {
 			config.devtool = 'source-map'
-			// console.log(config)
-			// config.output.path = __dirname + '/dist'
 			if (ANALYZE) {
 				config.plugins.push(
 					new BundleAnalyzerPlugin({
