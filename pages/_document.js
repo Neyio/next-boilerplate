@@ -7,6 +7,7 @@ You have to include it into the page using either next/head or a custom _documen
 import Document, { Head, Main, NextScript } from 'next/document'
 
 import axios from 'axios'
+import '../src/styles/index.less'
 export default class MyDocument extends Document {
 	static async getInitialProps(...args) {
 		const documentProps = await super.getInitialProps(...args)
@@ -27,11 +28,7 @@ export default class MyDocument extends Document {
 						type="image/x-icon"
 					/>
 					<link rel="ICON" href="/static/imgs/trip.ico" />
-					<link
-						rel="stylesheet"
-						type="text/css"
-						href="//webresource.english.c-ctrip.com/res/concat?f=/resaresenglish/ibu/fe-common/css/global-s.9563250d.css,/resaresenglish/ibu/fe-home/css/home-s.888adb60.css"
-					/>
+
 					<link rel="stylesheet" href="/_next/static/style.css" />
 				</Head>
 				<body>
