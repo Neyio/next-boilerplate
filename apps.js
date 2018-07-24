@@ -10,6 +10,7 @@ const config = require('config-lite')({
 	config_basedir: __dirname,
 	config_dir: 'config'
 })
+console.log(111)
 let baseUrl = '/'
 
 if (dev) {

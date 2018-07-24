@@ -22,13 +22,6 @@ export default class MyDocument extends Document {
 		return (
 			<html>
 				<Head>
-					<link
-						rel="SHORTCUT ICON"
-						href="/static/imgs/trip.ico"
-						type="image/x-icon"
-					/>
-					<link rel="ICON" href="/static/imgs/trip.ico" />
-
 					<link rel="stylesheet" href="/_next/static/style.css" />
 				</Head>
 				<body>
