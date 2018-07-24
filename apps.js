@@ -35,7 +35,6 @@ app.prepare().then(() => {
 		return handle(req, res)
 	})
 
-	// use next routes
 	server.use(`${baseUrl}`, router)
 	// server.use(`/you/dist/*`, express.static(__dirname + '/build'))
 	server.use(handle)
