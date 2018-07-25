@@ -1,15 +1,12 @@
-const next = require('next')
-const express = require('express')
-const path = require('path')
+import next from 'next'
+import express from 'express'
+import path from 'path'
 const port = parseInt(process.env.PORT, 10) || 8080
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const resolve = file => path.resolve(__dirname, file)
 const handle = app.getRequestHandler()
-const config = require('config-lite')({
-	config_basedir: __dirname,
-	config_dir: 'config'
-})
+
 console.log(111)
 let baseUrl = '/'
 

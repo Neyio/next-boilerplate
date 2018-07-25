@@ -6,11 +6,6 @@ const withCss = require('@zeit/next-css')
 const withSass = require('@zeit/next-sass')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { ANALYZE } = process.env
-const rpconfig = require('config-lite')({
-	// filename: `config.${process.env.NODE_ENV}`,
-	config_basedir: __dirname,
-	config_dir: 'config'
-})
 const dev = process.env.NODE_ENV !== 'production'
 // /* Without CSS Modules, with PostCSS */
 module.exports = withPlugins(
